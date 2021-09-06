@@ -1,24 +1,24 @@
-// "static void main" must be defined in a public class.
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc =  new Scanner(System.in);
-        int n = sc.nextInt();
-        int pow = sc.nextInt();
-        
-        int val = power(n, pow);
-        System.out.println(val);
+class Solution {
+    public double myPow(double x, int n) {
+        return helper(x,n);
     }
     
-    public static int power(int n, int pow){
-       if(pow==0)return 1;
+    public double helper(double x,  int n) {
+        if(n==0) return 1;
         
-        // return n*power(n, pow-1);  for linear solution
+        double res = helper(x, n/2);
         
-        if(pow%2==0){
-            return power(n, pow/2)*power(n, pow/2);
+        if(n%2==0)
+            return res*res;
+            
+        else {
+            if(n>0){
+                return res*res*x;
+            }else{
+                return (res*res)/x; // handling -ve cases
+            }
+            
         }
-        else{
-            return power(n, pow/2)*power(n, pow/2)*n;
-        }
+                   
     }
 }
