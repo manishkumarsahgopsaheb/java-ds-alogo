@@ -1,5 +1,5 @@
 // input = 3, 3
-// output = [h1h1v1v1, h1h1v2, h1v1h1v1, h1v1v1h1, h1v1v1h1, h1v2h1, h1v1h1v1, h1v1v1h1, h1v1v1h1, h2v1v1, h2v2, v1h1h1v1, v1h1v1h1, v1h1v1h1, v1h2v1, v1v1h1h1, v1v1h2, v1v1h1h1, v1v1h2, v2h1h1, v2h2, v1h1h1v1, v1h1v1h1, v1h1v1h1, v1h2v1, v1v1h1h1, v1v1h2, v1v1h1h1, v1v1h2, v2h1h1, v2h2]
+// output = [h1h1v1v1, h1h1v2, h1v1h1v1, h1v1v1h1, h1v1d1, h1v2h1, h1d1v1, h2v1v1, h2v2, v1h1h1v1, v1h1v1h1, v1h1d1, v1h2v1, v1v1h1h1, v1v1h2, v1d1h1, v2h1h1, v2h2, d1h1v1, d1v1h1, d1d1, d2]
 public class Main {
     public static void main(String[] args) {
         Scanner sc =  new Scanner(System.in);
@@ -37,9 +37,9 @@ public class Main {
         
         // diagonal moves
         for(int ms = 1; ms <= dr-sr && ms <= dc-sc; ms++){
-            List<String> dpaths = getMazePathswithJump(sr + ms, sc , dr, dc);
+            List<String> dpaths = getMazePathswithJump(sr + ms, sc + ms , dr, dc);
             for(String dpath : dpaths){
-                paths.add("v" + ms + dpath);
+                paths.add("d" + ms + dpath);
             }
         }
         return paths;
