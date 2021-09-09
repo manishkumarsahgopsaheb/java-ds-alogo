@@ -10,7 +10,7 @@ public class Main {
         System.out.println(pathCount(n));
     }
     
-    
+    // solution 1
     // recursion + memoization
     public static int CountStairPathMemoization(int n, int[] mem){
         if(n == 0){
@@ -32,6 +32,7 @@ public class Main {
         return pcount;
     }
     
+    // solution 2
     // dp solution using tabulization
     
     public static int pathCount(int n){
