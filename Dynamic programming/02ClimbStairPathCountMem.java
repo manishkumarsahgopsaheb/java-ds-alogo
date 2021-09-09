@@ -29,3 +29,5 @@ public class Main {
         return pcount;
     }
 }
+// input n = 5
+// total path count = 13
